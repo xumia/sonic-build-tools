@@ -24,7 +24,7 @@ mkdir -p target
 docker save sonic-slave-$DISTRO-$USER:latest | gzip -c > target/sonic-slave-$DISTRO.gz 
 
 REGISTRY_PORT=443
-REGISTRY_SERVER=sonicdev-microsoft.azurecr.io
+REGISTRY_SERVER=sonicrcr1.azurecr.io
 
 docker tag sonic-slave-$DISTRO-$USER:$SLAVE_TAG local/sonic-slave-$DISTRO-$USER:latest
 docker tag sonic-slave-$DISTRO-$USER:$SLAVE_TAG $REGISTRY_SERVER:$REGISTRY_PORT/sonic-slave-$DISTRO-$USER:latest
