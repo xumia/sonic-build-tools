@@ -1,8 +1,8 @@
 pipeline {
-    agent { node { label 'jenkins-kvmtest-workers||jenkins-kvmtest-workers-test' } }
+    agent { node { label 'jenkins-kvmtest-workers' } }
 
     parameters {
-        string(name: 'PROJECT', defaultValue: 'vs/buildimage-vs-image', description: 'which project to test')
+        string(name: 'PROJECT', defaultValue: 'vs/buildimage-vs-image-201911', description: 'which project to test')
         string(name: 'BUILD_NUM', defaultValue: '', description: 'which build to test')
     }
 
