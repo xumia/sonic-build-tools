@@ -36,9 +36,9 @@ git submodule foreach --recursive '[ -f .git ] && echo "gitdir: $(realpath --rel
 make configure PLATFORM=broadcom
 make SONIC_CONFIG_BUILD_JOBS=1 INSTALL_DEBUG_TOOLS=y SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache_broadcom target/sonic-broadcom.bin
 mv target/sonic-broadcom.bin target/sonic-broadcom-dbg.bin
-make SONIC_CONFIG_BUILD_JOBS=1 target/sonic-broadcom.bin
-make SONIC_CONFIG_BUILD_JOBS=1 target/sonic-aboot-broadcom.swi
-make SONIC_CONFIG_BUILD_JOBS=1 target/sonic-broadcom.raw
+make SONIC_CONFIG_BUILD_JOBS=1 SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache_broadcom target/sonic-broadcom.bin
+make SONIC_CONFIG_BUILD_JOBS=1 SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache_broadcom target/sonic-aboot-broadcom.swi
+make SONIC_CONFIG_BUILD_JOBS=1 SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache_broadcom target/sonic-broadcom.raw
 make SONIC_CONFIG_BUILD_JOBS=1 SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache_broadcom target/docker-syncd-brcm-rpc.gz target/docker-ptf-brcm.gz target/docker-saiserver-brcm.gz
 '''
             }
