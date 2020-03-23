@@ -29,7 +29,7 @@ pipeline {
                                         recursiveSubmodules: true,
                                         reference: '',
                                         trackingSubmodules: false]],
-                          userRemoteConfigs: [[url: 'http://github.com/lguohan/sonic-buildimage']]])
+                          userRemoteConfigs: [[url: 'http://github.com/xumia/sonic-buildimage']]])
                 }
             }
         }
