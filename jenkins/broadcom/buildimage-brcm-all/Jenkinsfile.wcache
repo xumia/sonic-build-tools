@@ -33,7 +33,7 @@ pipeline {
 
 git submodule foreach --recursive '[ -f .git ] && echo "gitdir: $(realpath --relative-to=. $(cut -d" " -f2 .git))" > .git'
 
-CACHE_OPTIONS="SONIC_DPKG_CACHE_METHOD=wcache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache/broadcom"
+CACHE_OPTIONS="SONIC_DPKG_CACHE_METHOD=wcache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache/broadcom BUILD_LOG_TIMESTAMP=simple"
 
 make configure PLATFORM=broadcom
 make SONIC_CONFIG_BUILD_JOBS=1 INSTALL_DEBUG_TOOLS=y $CACHE_OPTIONS target/sonic-broadcom.bin

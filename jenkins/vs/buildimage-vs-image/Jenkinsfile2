@@ -47,11 +47,11 @@ make configure PLATFORM=vs
 
 sudo bash -c "echo 1 > /proc/sys/vm/compact_memory"
 
-make SONIC_CONFIG_BUILD_JOBS=1 INSTALL_DEBUG_TOOLS=y SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache target/sonic-vs.img.gz
+make SONIC_CONFIG_BUILD_JOBS=1 INSTALL_DEBUG_TOOLS=y SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache BUILD_LOG_TIMESTAMP=simple target/sonic-vs.img.gz
 mv target/sonic-vs.bin target/sonic-vs-dbg.bin
 mv target/sonic-vs.img.gz target/sonic-vs-dbg.img.gz
 mv target/sonic-vs.img.gz.log target/sonic-vs-dbg.img.gz.log
-make SONIC_CONFIG_BUILD_JOBS=1 SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache target/sonic-vs.img.gz
+make SONIC_CONFIG_BUILD_JOBS=1 SONIC_DPKG_CACHE_METHOD=cache SONIC_DPKG_CACHE_SOURCE=/nfs/dpkg_cache BUILD_LOG_TIMESTAMP=simple target/sonic-vs.img.gz
 
 rm -rf ../target
 mv target ../
